@@ -5,7 +5,7 @@ description = "extlut libraries for ART"
 requires-python = ">=3.13"
 dependencies = [
     "shiboken6>=6.11.0",
-    "spectral-film-lut",
+    "spectral-film-lut==0.2.7",
     "spektrafilm",
 ]
 
