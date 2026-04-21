@@ -1,0 +1,26 @@
+[project]
+name = "extlut"
+version = "0.1.0"
+description = "extlut libraries for ART"
+requires-python = ">=3.13"
+dependencies = [
+    "shiboken6>=6.11.0",
+    "spectral-film-lut",
+    "spektrafilm",
+]
+
+[build-system]
+requires = ["uv_build>=0.11.0,<0.12.0"]
+build-backend = "uv_build"
+
+[tool.uv.sources]
+spektrafilm = { git = "https://github.com/andreavolpato/spektrafilm.git" }
+spectral-film-lut = { git = "https://github.com/JanLohse/spectral_film_lut" }
+
+[project.scripts]
+spektrafilm_mklut = "extlut.spektrafilm_mklut:main"
+spectral_film_mklut = "extlut.spectral_film_mklut:main"
+
+[tool.uv.extra-build-dependencies]
+spektrafilm = ["setuptools"]
+spectral-film-lut = ["setuptools", "setuptools-scm"]
